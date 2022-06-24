@@ -1,0 +1,16 @@
+/* 
+components: btn.scss
+*/
+
+.btn {
+  display: inline-block;
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+
+  &--primary {
+    background-color: $color--primary;
+    border-radius: $border--round;
+  }
+}

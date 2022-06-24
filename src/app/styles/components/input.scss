@@ -1,0 +1,22 @@
+/* 
+components: input.scss
+*/
+
+.input {
+  border: none;
+  outline: none;
+  width: 100%;
+  background-color: transparent;
+
+  &--primary {
+    border: 1px solid $color--primary;
+    border-radius: $border--round;
+    padding: 8px;
+  }
+  &__container {
+    display: flex;
+    width: 500px;
+    margin-left: 50%;
+    transform: translateX(-50%);
+  }
+}
