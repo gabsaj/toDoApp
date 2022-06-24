@@ -1,0 +1,23 @@
+/* 
+components: task.scss
+*/
+
+.task {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid $color--primary;
+  border-radius: $border--round;
+  padding: 16px;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    padding: 32px;
+    border: 1px solid $color--primary;
+    border-radius: $border--round;
+    width: 500px;
+    margin-left: 50%;
+    transform: translateX(-50%);
+  }
+}
