@@ -9,8 +9,22 @@ components: btn.scss
   border: none;
   cursor: pointer;
 
+  //button colors
+
   &--primary {
     background-color: $color--primary;
     border-radius: $border--round;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    text-transform: uppercase;
+  }
+
+  //button sizes
+
+  &--m {
+    width: 150px;
+    padding: 12px;
   }
 }

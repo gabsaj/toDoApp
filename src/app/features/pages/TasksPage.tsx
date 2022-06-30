@@ -21,7 +21,7 @@ const TasksPage = () => {
         hideProgressBar: true,
         autoClose: 2500,
         transition: Flip,
-        theme: "dark",
+        theme: "colored",
       });
     }
   };
@@ -34,11 +34,12 @@ const TasksPage = () => {
           name: taskName,
           id: id(),
         });
+        getTasks();
         toast.success("Task created", {
           position: "top-center",
           hideProgressBar: true,
           autoClose: 2500,
-          theme: "dark",
+          theme: "colored",
           transition: Flip,
         });
       }
@@ -47,7 +48,29 @@ const TasksPage = () => {
         position: "top-center",
         hideProgressBar: true,
         autoClose: 2500,
-        theme: "dark",
+        theme: "colored",
+        transition: Flip,
+      });
+    }
+  };
+
+  const handleDelete = async (taskId: string) => {
+    try {
+      await taskService.deleteTask(taskId);
+      toast.success("Task deleted", {
+        position: "top-center",
+        autoClose: 2500,
+        hideProgressBar: true,
+        transition: Flip,
+        theme: "colored",
+      });
+      getTasks();
+    } catch (error) {
+      toast.error("Failed to delete a task.", {
+        position: "top-center",
+        hideProgressBar: true,
+        autoClose: 2500,
+        theme: "colored",
         transition: Flip,
       });
     }
@@ -74,12 +97,12 @@ const TasksPage = () => {
             ></input>
             <button
               onClick={() => handleSubmit()}
-              className="btn btn--primary py--8"
+              className="btn btn--primary btn--m"
             >
-              Add task<i className="icon icon--base icon--plus"></i>
+              Add task<i className="icon icon--base icon--plus ml--8"></i>
             </button>
           </div>
-          <div className="task__container mt--64 ">
+          <div className="task__container mt--64 mb--80 ">
             {tasksList.length > 0 ? (
               <>
                 {tasksList.map((task) => (
@@ -87,7 +110,10 @@ const TasksPage = () => {
                     <div>{task.name}</div>
                     <div className="task__wrapper">
                       <i className="icon icon--base icon--edit"></i>
-                      <i className="icon icon--base icon--delete ml--8"></i>
+                      <i
+                        onClick={() => handleDelete(task.id)}
+                        className="icon icon--base icon--delete ml--8"
+                      ></i>
                     </div>
                   </div>
                 ))}

@@ -17,4 +17,8 @@ export default class TaskService extends BaseService {
   }
 
   //delete tasks
+
+  async deleteTask(id: string) {
+    const response = await this.instance.delete(`tasks/${id}`);
+  }
 }
