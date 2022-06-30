@@ -9,8 +9,19 @@ $unit: 4px;
 //colors
 $white: #ffffff;
 $black: #000000;
-$color--primary: #ffc8ff;
-$color--secondary: #b9cafa;
+$color--primary: #eea97b;
+$color--secondary: #ebebeb;
+$color--tertiary: #004e98;
+$color--quarteary: rgb(202, 114, 148);
+$color--blueish: rgb(195, 195, 248);
+
+$gradient: linear-gradient(
+  to left,
+  $color--primary,
+  15%,
+  $color--quarteary 30%,
+  $color--tertiary 50%
+);
 
 //border
 

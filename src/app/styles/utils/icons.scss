@@ -42,4 +42,9 @@
   &--plus {
     mask-image: url(../../assets/icons/plus.svg);
   }
+
+  //colors
+  &--blue {
+    background-color: $color--tertiary;
+  }
 }

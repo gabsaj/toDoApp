@@ -87,19 +87,21 @@ const TasksPage = () => {
         <div className="layout__main">
           <div className="input__container input--primary mt--80">
             <input className="input" placeholder="Search..."></input>
-            <i className="icon icon--base icon--search"></i>
+            <i className="icon icon--base icon--search icon--blue"></i>
           </div>
           <div className="input__container input--primary mt--32">
             <input
+              maxLength={30}
               onChange={(e) => setTaskName(e.target.value)}
               className="input"
-              placeholder="add task"
+              placeholder="Add task"
             ></input>
             <button
               onClick={() => handleSubmit()}
               className="btn btn--primary btn--m"
             >
-              Add task<i className="icon icon--base icon--plus ml--8"></i>
+              Add task
+              <i className="icon icon--base icon--plus icon--blue ml--8"></i>
             </button>
           </div>
           <div className="task__container mt--64 mb--80 ">
@@ -109,10 +111,9 @@ const TasksPage = () => {
                   <div key={task.id} className="task mt--24">
                     <div>{task.name}</div>
                     <div className="task__wrapper">
-                      <i className="icon icon--base icon--edit"></i>
                       <i
                         onClick={() => handleDelete(task.id)}
-                        className="icon icon--base icon--delete ml--8"
+                        className="icon icon--base icon--delete icon--blue ml--8"
                       ></i>
                     </div>
                   </div>
